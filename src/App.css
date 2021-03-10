@@ -5,10 +5,40 @@
 .grey {
   background: #e5e5e5;
 }
+.brown {
+  background: #433434;
+  border: none;
+}
+.brown:hover {
+  background: #201919;
+}
 .banner {
   background: #ffc700;
 }
 
-body {
-  background: grey;
+html {
+  background: #e5e5e5;
+}
+
+.profile-photos {
+  width: 10em;
+}
+.status-finished {
+  background: #00ff481e;
+  padding: 0.1em 2em;
+  color: #00ff47;
+}
+
+.input-text {
+  border: 2px solid #433434;
+  background: #d2d2d2 25%;
+}
+.input-text:focus {
+  border: 2px solid #745959;
+  background: #f0efef;
+  box-shadow: none;
+}
+
+.title-product {
+  height: 2em;
 }

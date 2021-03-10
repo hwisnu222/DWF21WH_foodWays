@@ -56,7 +56,7 @@ export default function Home() {
             <Card className="p-2 border-0">
               <Card.Img variant="top" src={Geprek} />
               <Card.Body>
-                <Card.Title>Geprek Bensu</Card.Title>
+                <Card.Title className="title-product">Geprek Bensu</Card.Title>
                 <Card.Text>0.2 KM</Card.Text>
               </Card.Body>
             </Card>
@@ -65,7 +65,9 @@ export default function Home() {
             <Card className="p-2 border-0">
               <Card.Img variant="top" src={NasiGoreng} />
               <Card.Body>
-                <Card.Title>Nasi Goreng Mas Rony</Card.Title>
+                <Card.Title className="title-product">
+                  Nasi Goreng Mas Rony
+                </Card.Title>
                 <Card.Text>0.6 KM</Card.Text>
               </Card.Body>
             </Card>
@@ -74,7 +76,9 @@ export default function Home() {
             <Card className="p-2 border-0">
               <Card.Img variant="top" src={Pecel} />
               <Card.Body>
-                <Card.Title>Pecel Ayam Prambanan</Card.Title>
+                <Card.Title className="title-product">
+                  Pecel Ayam Prambanan
+                </Card.Title>
                 <Card.Text>0.6 KM</Card.Text>
               </Card.Body>
             </Card>
@@ -83,7 +87,7 @@ export default function Home() {
             <Card className="p-2 border-0">
               <Card.Img variant="top" src={Kopi} />
               <Card.Body>
-                <Card.Title>Kopi Kenangan</Card.Title>
+                <Card.Title className="title-product">Kopi Kenangan</Card.Title>
                 <Card.Text>1.6 KM</Card.Text>
               </Card.Body>
             </Card>
