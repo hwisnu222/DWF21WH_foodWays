@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Index from "./pages/index";
 import UserProfile from "./pages/UserProfile";
 import Detail from "./pages/DetailProduct";
+import AddProduct from "./pages/addProduct";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/" component={Index} />
           <Route exact path="/profile" component={UserProfile} />
           <Route exact path="/detail" component={Detail} />
+          <Route exact path="/addproduct" component={AddProduct} />
         </div>
       </Switch>
     </Router>
