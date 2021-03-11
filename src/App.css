@@ -19,6 +19,52 @@
   background: #d1a400;
 }
 
+.btn-cancel {
+  padding: 0.3em 2em;
+  border-radius: 5px;
+  background: #ff0742;
+  color: #f2f2f2;
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+.btn-cancel:hover {
+  background: #d80536;
+}
+.btn-approve {
+  padding: 0.3em 2em;
+  border-radius: 5px;
+  background: #0acf83;
+  color: #f2f2f2;
+  cursor: pointer;
+}
+.btn-approve:hover {
+  background: #069c63;
+}
+.resolve {
+  padding: 0.1em 0.35em;
+  border-radius: 50%;
+  background: #0acf83;
+  cursor: pointer;
+}
+.reject {
+  padding: 0.1em 0.35em;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #ff0742;
+}
+.success {
+  color: #0acf83;
+}
+.cancel {
+  color: #ff0742;
+}
+.otw {
+  color: #00d1ff;
+}
+.waiting {
+  color: #ff9900;
+}
+
 .text-yellow {
   color: #ffc700;
 }
