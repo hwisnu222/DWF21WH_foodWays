@@ -1,9 +1,9 @@
 import React from "react";
 
 //Components
-import HeaderAdmin from "../component/HeaderAdmin";
-import Profile from "../component/Profile";
-import EditProfile from "../component/EditProfile";
+import HeaderAdmin from "../component/micro/HeaderAdmin";
+import Profile from "../component/macro/Profile";
+import EditProfile from "../component/macro/EditProfile";
 
 export default function UserProfile() {
   return (

@@ -2,9 +2,9 @@ import React from "react";
 import { Row, Col, Button, Form, Container, InputGroup } from "react-bootstrap";
 
 // Images
-import FoodWays from "../assets/icon/foodways.svg";
-import Logo from "../assets/icon/logo.svg";
-import ProfilePhotos from "../assets/images/profile.svg";
+import FoodWays from "../../assets/icon/foodways.svg";
+import Logo from "../../assets/icon/logo.svg";
+import ProfilePhotos from "../../assets/images/profile.svg";
 
 export default function EditProfile() {
   return (

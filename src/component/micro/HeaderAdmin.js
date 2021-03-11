@@ -2,10 +2,10 @@ import React from "react";
 import { Button, Navbar, Nav, Form, FormControl } from "react-bootstrap";
 
 // images
-import Chart from "../assets/icon/chart.svg";
-import Avatar from "../assets/icon/avatar.svg";
-import FoodWays from "../assets/icon/foodways.svg";
-import Logo from "../assets/icon/logo.svg";
+import Avatar from "../../assets/icon/avatar.svg";
+import FoodWays from "../../assets/icon/foodways.svg";
+import Logo from "../../assets/icon/logo.svg";
+import Chart from "../../assets/icon/chart.svg";
 
 export default function HeaderAdmin() {
   return (

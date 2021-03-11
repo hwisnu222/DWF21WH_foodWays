@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import pages
 import Index from "./pages/index";
 import UserProfile from "./pages/UserProfile";
+import Detail from "./pages/DetailProduct";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <div className="grey">
           <Route exact path="/" component={Index} />
           <Route exact path="/profile" component={UserProfile} />
+          <Route exact path="/detail" component={Detail} />
         </div>
       </Switch>
     </Router>

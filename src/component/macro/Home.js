@@ -2,15 +2,15 @@ import React from "react";
 import { Row, Col, Container, Card } from "react-bootstrap";
 
 // Images
-import Burger from "../assets/icon/burger.svg";
-import Startbucks from "../assets/icon/starbucks.svg";
-import Kfc from "../assets/icon/kfc.svg";
-import Jco from "../assets/icon/jco.svg";
-import Geprek from "../assets/images/geprek.svg";
-import NasiGoreng from "../assets/images/nasigoreng.svg";
-import Pecel from "../assets/images/pecel.svg";
-import Kopi from "../assets/images/kopi.svg";
-import Banner from "../assets/icon/banner.svg";
+import Burger from "../../assets/icon/burger.svg";
+import Startbucks from "../../assets/icon/starbucks.svg";
+import Kfc from "../../assets/icon/kfc.svg";
+import Jco from "../../assets/icon/jco.svg";
+import Geprek from "../../assets/images/geprek.svg";
+import NasiGoreng from "../../assets/images/nasigoreng.svg";
+import Pecel from "../../assets/images/pecel.svg";
+import Kopi from "../../assets/images/kopi.svg";
+import Banner from "../../assets/icon/banner.svg";
 
 export default function Home() {
   return (

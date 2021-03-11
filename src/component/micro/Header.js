@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Button, Navbar, Nav, Form, FormControl, Modal } from "react-bootstrap";
 
 // images
-import FoodWays from "../assets/icon/foodways.svg";
-import Logo from "../assets/icon/logo.svg";
+import FoodWays from "../../assets/icon/foodways.svg";
+import Logo from "../../assets/icon/logo.svg";
 
 export default function Header() {
   const [modalLogin, setModalLogin] = useState(false);

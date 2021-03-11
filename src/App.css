@@ -2,6 +2,23 @@
 .yellow {
   background: #ffc700;
 }
+.btn-yellow {
+  border: none;
+  background: #ffc700;
+}
+.btn-yellow:hover {
+  background: #a88400;
+  border: none;
+}
+.btn-yellow:active {
+  border: none;
+  background: #d1a400;
+}
+.btn-yellow:focus {
+  border: none;
+  background: #d1a400;
+}
+
 .text-yellow {
   color: #ffc700;
 }
