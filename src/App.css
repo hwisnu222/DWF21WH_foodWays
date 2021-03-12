@@ -150,3 +150,28 @@ html {
   margin: 12px;
   border-radius: 4px;
 }
+
+.dropdown-menu {
+  margin-top: 30px !important;
+  transform: translate(-165px);
+  border: none;
+}
+
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 120px;
+  border-width: 1em;
+  border-style: solid;
+  border-color: transparent transparent #ffffff transparent;
+}
+
+.icon-menu {
+  width: 24px;
+  margin-right: 0.4em;
+}
+
+.item-menu {
+  border-bottom: 2px solid #959191;
+}
