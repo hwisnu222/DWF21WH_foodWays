@@ -1,7 +1,13 @@
+/* font color */
+.text-red {
+  color: #ff0742;
+}
+
 /* bakcground */
 .yellow {
   background: #ffc700;
 }
+
 .btn-yellow {
   border: none;
   background: #ffc700;
@@ -110,4 +116,37 @@ html {
 
 .title-product {
   height: 2em;
+}
+
+.total-product {
+  padding: 0.3em 1em;
+  border-radius: 5px;
+  margin: 0 1em 0 1em;
+  background: #f6e6da;
+}
+.decrement {
+  font-size: 2em;
+}
+.map-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 300px;
+  border: 1em solid #ffffff;
+  border-radius: 1em;
+}
+
+.sidebar {
+  background-color: rgba(35, 55, 75, 0.9);
+  color: #ffffff;
+  padding: 6px 12px;
+  font: 15px/24px monospace;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 12px;
+  border-radius: 4px;
 }

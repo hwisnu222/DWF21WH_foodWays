@@ -10,6 +10,7 @@ import UserProfile from "./pages/UserProfile";
 import Detail from "./pages/DetailProduct";
 import AddProduct from "./pages/addProduct";
 import TransactionPartners from "./pages/TransactionPartners";
+import CartUser from "./pages/CartUser";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/detail" component={Detail} />
           <Route exact path="/addproduct" component={AddProduct} />
           <Route exact path="/transaction" component={TransactionPartners} />
+          <Route exact path="/cart" component={CartUser} />
         </div>
       </Switch>
     </Router>
