@@ -1,16 +1,16 @@
-import React from "react";
-
 //Components
 import HeaderAdmin from "../component/micro/HeaderAdmin";
-import Profile from "../component/macro/ProfilePartner";
-import EditProfile from "../component/macro/EditProfile";
+import Profile from "../component/macro/Profile";
 
 export default function UserProfile() {
   return (
     <div>
       <HeaderAdmin />
-      <EditProfile />
-      <Profile />
+      <Profile
+        title="My Profile"
+        history="Transaction"
+        linkEdit="/edit-user-profile"
+      />
     </div>
   );
 }

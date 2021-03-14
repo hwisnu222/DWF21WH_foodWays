@@ -1,3 +1,6 @@
+body {
+  background: #e5e5e5;
+}
 /* font color */
 .text-red {
   color: #ff0742;
@@ -139,14 +142,13 @@ html {
 }
 
 .sidebar {
-  background-color: rgba(35, 55, 75, 0.9);
-  color: #ffffff;
+  background-color: #ffffff;
   padding: 6px 12px;
   font: 15px/24px monospace;
   z-index: 1;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   margin: 12px;
   border-radius: 4px;
 }

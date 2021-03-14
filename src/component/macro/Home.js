@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col, Container, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 // Images
 import Burger from "../../assets/icon/burger.svg";
@@ -14,7 +15,7 @@ import Banner from "../../assets/icon/banner.svg";
 
 export default function Home() {
   return (
-    <div>
+    <div className="mb-5">
       <div className="yellow p-4">
         <Container>
           <img src={Banner} alt="Banner" />
@@ -25,27 +26,35 @@ export default function Home() {
         <h3 className="mt-4">Popular Restaurant</h3>
         <Row>
           <Col>
-            <Card body className="rounded">
+            <Card body as={Link} to="/products">
               <img src={Burger} alt="Category" className="mr-4" />
-              <span className="font-weight-bold">Burger King</span>
+              <span className="font-weight-bold text-decoration-none text-dark">
+                Burger King
+              </span>
             </Card>
           </Col>
           <Col>
-            <Card body>
+            <Card body as={Link} to="/products">
               <img src={Startbucks} alt="Category" className="mr-4" />{" "}
-              <span className="font-weight-bold">Starbucks</span>
+              <span className="font-weight-bold text-decoration-none text-dark">
+                Starbucks
+              </span>
             </Card>
           </Col>
           <Col>
-            <Card body>
+            <Card body as={Link} to="/products">
               <img src={Kfc} alt="Category" className="mr-4" />{" "}
-              <span className="font-weight-bold">KFC</span>
+              <span className="font-weight-bold text-decoration-none text-dark">
+                KFC
+              </span>
             </Card>
           </Col>
           <Col>
-            <Card body>
+            <Card body as={Link} to="/products">
               <img src={Jco} alt="Category" className="mr-4" />{" "}
-              <span className="font-weight-bold">JCO</span>
+              <span className="font-weight-bold text-decoration-none text-dark">
+                JCO
+              </span>
             </Card>
           </Col>
         </Row>

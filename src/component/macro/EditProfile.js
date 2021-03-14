@@ -1,10 +1,19 @@
-import React from "react";
-import { Row, Col, Button, Form, Container, InputGroup } from "react-bootstrap";
+import React, { useState } from "react";
+import { Row, Col, Button, Form, Container, Modal } from "react-bootstrap";
 
-export default function EditProfile() {
+// components
+import MapPartner from "../micro/MapPartner";
+
+export default function EditProfile(props) {
+  // state
+  const [modalLocation, setmodalLocation] = useState(false);
+
+  const handleModal = () => {
+    setmodalLocation(!modalLocation);
+  };
   return (
     <Container>
-      <h3 className="mb-4 mt-5">Edit Profile</h3>
+      <h3 className="mb-4 mt-5">Edit Profile {props.title}</h3>
       <Form>
         <Form.Group>
           <Row>
@@ -46,7 +55,7 @@ export default function EditProfile() {
               />
             </Col>
             <Col md={2}>
-              <Button className="brown block">
+              <Button className="brown block" onClick={handleModal}>
                 <span className="mr-1">Select On Map</span>
                 <i class="fa fa-map" aria-hidden="true"></i>
               </Button>
@@ -57,6 +66,18 @@ export default function EditProfile() {
           <Button className="brown ml-auto mt-5 px-5">Save</Button>
         </div>
       </Form>
+      {/* Modal */}
+      <Modal
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        show={modalLocation}
+        onHide={handleModal}
+      >
+        <Modal.Body>
+          <MapPartner />
+        </Modal.Body>
+      </Modal>
     </Container>
   );
 }

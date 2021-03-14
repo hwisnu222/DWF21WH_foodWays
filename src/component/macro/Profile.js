@@ -1,22 +1,25 @@
 import React from "react";
 import { Row, Col, Button, Card, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 // Images
 import FoodWays from "../../assets/icon/foodways.svg";
 import Logo from "../../assets/icon/logo.svg";
 import ProfilePhotos from "../../assets/images/profile.svg";
 
-export default function Profile() {
+export default function Profile(props) {
   return (
     <Container>
       <Row className="mt-5">
         <Col>
-          <h3>My Profile</h3>
+          <h3 className="mb-4">{props.title}</h3>
           <Row className="mt-2">
             <Col md={4}>
               <div className="d-flex flex-column">
                 <img src={ProfilePhotos} alt="profile" className="mb-2" />
-                <Button className="brown">Edit Profile</Button>
+                <Button as={Link} to={props.linkEdit} className="brown">
+                  Edit Profile
+                </Button>
               </div>
             </Col>
             <Col md={8}>
@@ -30,7 +33,7 @@ export default function Profile() {
           </Row>
         </Col>
         <Col>
-          <h3>History Transaction</h3>
+          <h3 className="mb-4">History {props.history}</h3>
           <Card body className="mt-2 border-0">
             <Row>
               <Col>

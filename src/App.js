@@ -1,29 +1,69 @@
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-// import pages
+// pages
 import Index from "./pages/index";
+import NotFound from "./pages/404";
+import PrivateRoute from "./component/micro/PrivateRoute";
+
+// User
 import UserProfile from "./pages/UserProfile";
+import CartUser from "./pages/CartUser";
 import Detail from "./pages/DetailProduct";
+import EditUserProfile from "./pages/EditUserProfile";
+
+// Partner
 import AddProduct from "./pages/addProduct";
 import TransactionPartners from "./pages/TransactionPartners";
-import CartUser from "./pages/CartUser";
+import PartnerProfile from "./pages/PartnerProfile";
+import EditPartnerProfile from "./pages/EditPartnerProfile";
+
+// test
+import User from "./pages/User";
+
+//Context
+import { UserContextProvider } from "./context/userContext";
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <div className="grey">
+    // context
+    <UserContextProvider>
+      <Router>
+        <Switch>
           <Route exact path="/" component={Index} />
-          <Route exact path="/profile" component={UserProfile} />
-          <Route exact path="/detail" component={Detail} />
-          <Route exact path="/addproduct" component={AddProduct} />
-          <Route exact path="/transaction" component={TransactionPartners} />
-          <Route exact path="/cart" component={CartUser} />
-        </div>
-      </Switch>
-    </Router>
+          <PrivateRoute exact path="/user-profile" component={UserProfile} />
+          <PrivateRoute exact path="/cart" component={CartUser} />
+          <PrivateRoute
+            exact
+            path="/edit-user-profile"
+            component={EditUserProfile}
+          />
+          <Route exact path="/products" component={Detail} />
+
+          {/* partner */}
+          <PrivateRoute exact path="/add-product" component={AddProduct} />
+          <PrivateRoute
+            exact
+            path="/transaction"
+            component={TransactionPartners}
+          />
+          <PrivateRoute
+            exact
+            path="/partner-profile"
+            component={PartnerProfile}
+          />
+          <PrivateRoute
+            exact
+            path="/edit-partner-profile"
+            component={EditPartnerProfile}
+          />
+
+          <Route exact path="/user" component={User} />
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
+    </UserContextProvider>
   );
 }
 

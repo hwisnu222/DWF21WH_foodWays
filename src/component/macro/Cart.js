@@ -1,54 +1,29 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Container, Row, Form, Col, Button, Modal } from "react-bootstrap";
-import mapboxgl from "mapbox-gl/dist/mapbox-gl.js";
+
+// context
+import { UserContext } from "../../context/userContext";
+
+// components
+import MapPartner from "../micro/MapPartner";
 
 // images
 import Geprek from "../../assets/images/geprek-chart.svg";
 
-mapboxgl.accessToken = "API_KEY";
-
 export default function Cart() {
+  // initail context with argument
+  const [state, dispatch] = useContext(UserContext);
+
+  useEffect(() => {
+    dispatch({ type: "LOGIN" });
+    console.log("data state", state);
+  }, []);
+
   // state
   const [modalLocation, setModalLocation] = useState(false);
-  const [lng, setLng] = useState(-70.9);
-  const [lat, setLat] = useState(42.35);
-  const [zoom, setZoom] = useState(9);
-  const [maps, setMaps] = useState(null);
-  const [address, setAddress] = useState("Jakarta");
 
   // function
   const handleClose = () => setModalLocation(!modalLocation);
-  const mapContainer = useRef(null);
-
-  // hooks
-  // useEffect(() => {
-  //   const map = new mapboxgl.Map({
-  //     container: mapContainer.current,
-  //     style: "mapbox://styles/mapbox/streets-v11",
-  //     center: [lng, lat],
-  //     zoom: zoom,
-  //   });
-
-  //   map.on("move", () => {
-  //     setLng(map.getCenter().lng.toFixed(4));
-  //     setLat(map.getCenter().lat.toFixed(4));
-  //     setZoom(map.getZoom().toFixed(2));
-  //   });
-
-  //   return () => map.remove();
-  // }, []);
-
-  useEffect(() => {
-    if (mapContainer.current && !maps) {
-      const map = new mapboxgl.Map({
-        container: mapContainer.current,
-        style: "mapbox://styles/mapbox/streets-v11",
-        center: [lng, lat],
-        zoom: zoom,
-      });
-      setMaps(maps);
-    }
-  }, [mapContainer, maps]);
 
   return (
     <Container>
@@ -61,7 +36,6 @@ export default function Cart() {
               type="text"
               placeholder="Location"
               className="input-text"
-              value={address}
             />
           </div>
           <div>
@@ -135,10 +109,7 @@ export default function Cart() {
         onHide={handleClose}
       >
         <Modal.Body>
-          <div className="sidebar">
-            Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
-          </div>
-          <div className="map-container" ref={mapContainer} />
+          <MapPartner />
         </Modal.Body>
       </Modal>
     </Container>
