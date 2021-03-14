@@ -3,6 +3,7 @@ import { Container, Row, Form, Col, Button, Modal } from "react-bootstrap";
 
 // context
 import { UserContext } from "../../context/userContext";
+import { CartContext } from "../../context/cartContext";
 
 // components
 import MapPartner from "../micro/MapPartner";
@@ -13,10 +14,13 @@ import Geprek from "../../assets/images/geprek-chart.svg";
 export default function Cart() {
   // initail context with argument
   const [state, dispatch] = useContext(UserContext);
+  const [stateCart, dispatchCart] = useContext(CartContext);
+  const { carts } = stateCart;
 
   useEffect(() => {
     dispatch({ type: "LOGIN" });
     console.log("data state", state);
+    console.log("data state", stateCart);
   }, []);
 
   // state
@@ -26,7 +30,7 @@ export default function Cart() {
   const handleClose = () => setModalLocation(!modalLocation);
 
   return (
-    <Container>
+    <Container className="pb-5">
       <h3 className="mb-4 mt-5">Geprek Bensu</h3>
       <Form.Group>
         <Form.Label>Delivery</Form.Label>
@@ -49,27 +53,31 @@ export default function Cart() {
       <label className="mt-4 font-weight-bold">Review Your Order</label>
       <Row>
         <Col md="8">
-          <hr />
-          <div className="d-flex">
+          {carts.map((item) => (
             <div>
-              <img src={Geprek} alt="chart" className="mr-3" />
-            </div>
-            <div className="d-flex justify-content-between w-100">
-              <div>
-                <p className="font-weight-bold">Paket Geprek</p>
-                <p>
-                  <span className="font-weight-bolder decrement">-</span>
-                  <span className="total-product">1</span>
-                  <span className="font-weight-bolder decrement">+</span>
-                </p>
+              <hr />
+              <div className="d-flex">
+                <div>
+                  <img src={item.img} alt="chart" className="mr-3" />
+                </div>
+                <div className="d-flex justify-content-between w-100">
+                  <div>
+                    <p className="font-weight-bold">{item.name}</p>
+                    <p>
+                      <span className="font-weight-bolder decrement">-</span>
+                      <span className="total-product">1</span>
+                      <span className="font-weight-bolder decrement">+</span>
+                    </p>
+                  </div>
+                  <div>
+                    <p>{item.price}</p>
+                    <i className="fa fa-trash-o" aria-hidden="true"></i>
+                  </div>
+                </div>
               </div>
-              <div>
-                <p>Rp.15.000</p>
-                <i className="fa fa-trash-o" aria-hidden="true"></i>
-              </div>
+              <hr />
             </div>
-          </div>
-          <hr />
+          ))}
         </Col>
         <Col md="4">
           <hr />
@@ -94,11 +102,11 @@ export default function Cart() {
               <p className="text-red font-weight-bold">Rp. 45.000</p>
             </div>
           </div>
+          <div className="d-flex justify-contetn-end">
+            <Button className="brown ml-auto mt-5 px-5">Order</Button>
+          </div>
         </Col>
       </Row>
-      <div className="d-flex justify-contetn-end">
-        <Button className="brown ml-auto mt-5 px-5">Order</Button>
-      </div>
 
       {/* Modal */}
       <Modal
