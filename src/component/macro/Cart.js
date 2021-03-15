@@ -16,6 +16,7 @@ export default function Cart() {
   const [state, dispatch] = useContext(UserContext);
   const [stateCart, dispatchCart] = useContext(CartContext);
   const { carts } = stateCart;
+  const ongkirPrice = 10000;
 
   useEffect(() => {
     dispatch({ type: "LOGIN" });
@@ -28,6 +29,12 @@ export default function Cart() {
 
   // function
   const handleClose = () => setModalLocation(!modalLocation);
+
+  // total price
+  const totalPrice = carts.reduce((acc, num) => {
+    return acc + num.price;
+  }, 0);
+  const totalPriceProduct = totalPrice + ongkirPrice;
 
   return (
     <Container className="pb-5">
@@ -70,8 +77,12 @@ export default function Cart() {
                     </p>
                   </div>
                   <div>
-                    <p>{item.price}</p>
-                    <i className="fa fa-trash-o" aria-hidden="true"></i>
+                    <p>Rp. {item.price}</p>
+                    <i
+                      className="fa fa-trash-o"
+                      style={{ cursor: "pointer" }}
+                      aria-hidden="true"
+                    ></i>
                   </div>
                 </div>
               </div>
@@ -88,9 +99,9 @@ export default function Cart() {
               <p>Ongkir</p>
             </div>
             <div className="text-right">
-              <p className="text-red">Rp. 35.000</p>
-              <p>2</p>
-              <p className="text-red">Rp.10.000</p>
+              <p className="text-red">Rp.{totalPrice}</p>
+              <p>{carts.length}</p>
+              <p className="text-red">Rp.{ongkirPrice}</p>
             </div>
           </div>
           <hr />
@@ -99,7 +110,9 @@ export default function Cart() {
               <p className="text-red font-weight-bold">Total</p>
             </div>
             <div>
-              <p className="text-red font-weight-bold">Rp. 45.000</p>
+              <p className="text-red font-weight-bold">
+                Rp. {totalPriceProduct}
+              </p>
             </div>
           </div>
           <div className="d-flex justify-contetn-end">

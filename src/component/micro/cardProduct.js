@@ -18,7 +18,7 @@ export default function CardProduct({ img, title, price, product }) {
       <Card.Img variant="top" src={img} />
       <Card.Body>
         <Card.Title style={{ height: "2em" }}>{title}</Card.Title>
-        <Card.Text>{price}</Card.Text>
+        <Card.Text>Rp. {price}</Card.Text>
         <Button
           onClick={() => {
             handleCart(product);
