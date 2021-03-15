@@ -74,7 +74,14 @@ export default function EditProfile(props) {
         show={modalLocation}
         onHide={handleModal}
       >
-        <Modal.Body>
+        <div className="d-flex justify-content-end">
+          <i
+            onClick={handleModal}
+            className="fa fa-times m-2 close-map"
+            aria-hidden="true"
+          ></i>
+        </div>
+        <Modal.Body closeButton>
           <MapPartner />
         </Modal.Body>
       </Modal>

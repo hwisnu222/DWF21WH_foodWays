@@ -1,9 +1,53 @@
-body {
-  background: #e5e5e5;
+@import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;800&display=swap");
+@import url("http://fonts.cdnfonts.com/css/avenir-lt-std");
+@import url("http://fonts.cdnfonts.com/css/product-sans");
+
+.avenir-font {
+  font-family: "Avenir LT Std", sans-serif;
 }
-/* font color */
+
+.product-font {
+  font-family: "Product Sans", sans-serif;
+}
+
+* {
+  font-family: "Abhaya Libre", serif;
+}
+
+/* color */
 .text-red {
   color: #ff0742;
+}
+.text-green {
+  color: #00d1ff;
+}
+.text-yellow {
+  color: #ff9900;
+}
+.text-brown {
+  color: #433434;
+}
+
+/* background */
+.bg-red {
+  background: #ff0742;
+  color: #f2f2f2;
+}
+.bg-green {
+  background: #00d1ff;
+  color: #f2f2f2;
+}
+.bg-yellow {
+  background: #ff9900;
+  color: #f2f2f2;
+}
+.bg-brown {
+  background: #433434;
+  color: #f2f2f2;
+}
+
+body {
+  background: #e5e5e5;
 }
 
 /* bakcground */
@@ -14,10 +58,12 @@ body {
 .btn-yellow {
   border: none;
   background: #ffc700;
+  color: #433434;
 }
 .btn-yellow:hover {
   background: #a88400;
   border: none;
+  color: #f2f2f2;
 }
 .btn-yellow:active {
   border: none;
@@ -74,9 +120,6 @@ body {
   color: #ff9900;
 }
 
-.text-yellow {
-  color: #ffc700;
-}
 .grey {
   background: #e5e5e5;
 }
@@ -117,6 +160,16 @@ html {
   box-shadow: none;
 }
 
+.input-form-login {
+  border: 2px solid #acabab;
+  background: #d2d2d2 25%;
+}
+.input-form-login:focus {
+  border: 2px solid #acabab;
+  background: #c3c2c2;
+  box-shadow: none;
+}
+
 .title-product {
   height: 2em;
 }
@@ -147,10 +200,29 @@ html {
   font: 15px/24px monospace;
   z-index: 1;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
   margin: 12px;
   border-radius: 4px;
+  width: 400px;
+}
+
+.address-title {
+  font-size: 18px;
+}
+
+.address-user {
+  font-size: 12px;
+}
+
+.close-map {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  background: #ffffff;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .dropdown-menu {
@@ -176,4 +248,37 @@ html {
 
 .item-menu {
   border-bottom: 2px solid #959191;
+}
+
+.text-category {
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.title-card {
+  font-size: 18px;
+}
+
+.badge {
+  transform: translate(-12px);
+}
+
+.avatar {
+  width: 50px;
+}
+
+.badge {
+  position: absolute;
+}
+
+.card-product {
+  padding: 11px;
+}
+
+.card-price {
+  font-size: 14px;
+}
+
+.cart-price {
+  font-size: 14px;
 }

@@ -10,7 +10,7 @@ import { product } from "../../assets/data.js";
 export default function Detail() {
   return (
     <Container>
-      <h3 className="mt-5 mb-4">Geprek Bensu</h3>
+      <h3 className="mt-5 mb-4 font-weight-bold">Geprek Bensu</h3>
       <Row>
         {product.map((item) => (
           <Col md={3}>

@@ -1,4 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
+
+// images
+import Location from "../../assets/icon/location.svg";
+
 import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp";
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker";
@@ -32,11 +36,24 @@ export default function MapPartner() {
 
   return (
     <div>
-      <div className="sidebar">
-        <h3>Location</h3>
-        <p>Longitude: {lng}</p>
-        <p>Latitude: {lat}</p>
-        <p>Zoom: {zoom}</p>
+      <div className="sidebar shadow p-3">
+        <h6 className="avenir-font mb-4 font-weight-bold">
+          Select Delivery Location
+        </h6>
+        <div className="d-flex">
+          <div>
+            <img src={Location} alt="location" className="mr-4" />
+          </div>
+          <div>
+            <p className="address-title">Harbour Building</p>
+            <p className="address-user">
+              Jl. Elang IV No.48, Sawah Lama, Kec. Ciputat, Kota Tangerang
+              Selatan, Banten 15413, Indonesia
+            </p>
+          </div>
+        </div>
+        <p className="avenir-font font-weight-bold">Delivery Time</p>
+        <p>10 - 15 Minutes</p>
       </div>
       <div className="map-container" ref={mapContainer} />
     </div>

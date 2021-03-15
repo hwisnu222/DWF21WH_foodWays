@@ -25,48 +25,55 @@ import User from "./pages/User";
 //Context
 import { UserContextProvider } from "./context/userContext";
 import { CartContextProvider } from "./context/cartContext";
+import { RoleContextProvider } from "./context/roleContext";
 
 function App() {
   return (
     // context
-    <CartContextProvider>
-      <UserContextProvider>
-        <Router>
-          <Switch>
-            <Route exact path="/" component={Index} />
-            <PrivateRoute exact path="/user-profile" component={UserProfile} />
-            <PrivateRoute exact path="/cart" component={CartUser} />
-            <PrivateRoute
-              exact
-              path="/edit-user-profile"
-              component={EditUserProfile}
-            />
-            <Route exact path="/products" component={Detail} />
+    <RoleContextProvider>
+      <CartContextProvider>
+        <UserContextProvider>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={Index} />
+              <PrivateRoute
+                exact
+                path="/user-profile"
+                component={UserProfile}
+              />
+              <PrivateRoute exact path="/cart" component={CartUser} />
+              <PrivateRoute
+                exact
+                path="/edit-user-profile"
+                component={EditUserProfile}
+              />
+              <Route exact path="/products" component={Detail} />
 
-            {/* partner */}
-            <PrivateRoute exact path="/add-product" component={AddProduct} />
-            <PrivateRoute
-              exact
-              path="/transaction"
-              component={TransactionPartners}
-            />
-            <PrivateRoute
-              exact
-              path="/partner-profile"
-              component={PartnerProfile}
-            />
-            <PrivateRoute
-              exact
-              path="/edit-partner-profile"
-              component={EditPartnerProfile}
-            />
+              {/* partner */}
+              <PrivateRoute exact path="/add-product" component={AddProduct} />
+              <PrivateRoute
+                exact
+                path="/transaction"
+                component={TransactionPartners}
+              />
+              <PrivateRoute
+                exact
+                path="/partner-profile"
+                component={PartnerProfile}
+              />
+              <PrivateRoute
+                exact
+                path="/edit-partner-profile"
+                component={EditPartnerProfile}
+              />
 
-            <Route exact path="/user" component={User} />
-            <Route component={NotFound} />
-          </Switch>
-        </Router>
-      </UserContextProvider>
-    </CartContextProvider>
+              <Route exact path="/user" component={User} />
+              <Route component={NotFound} />
+            </Switch>
+          </Router>
+        </UserContextProvider>
+      </CartContextProvider>
+    </RoleContextProvider>
   );
 }
 

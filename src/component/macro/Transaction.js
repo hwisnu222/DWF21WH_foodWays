@@ -51,8 +51,8 @@ export default function Transaction() {
               <p className="otw">On The Way</p>
             </td>
             <td className="text-center">
-              <span className="reject text-center">
-                <i class="fa fa-check" aria-hidden="true"></i>
+              <span className="text-center">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>
               </span>
             </td>
           </tr>

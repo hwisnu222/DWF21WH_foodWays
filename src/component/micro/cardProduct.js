@@ -14,16 +14,18 @@ export default function CardProduct({ img, title, price, product }) {
   }
 
   return (
-    <Card className="mb-4 p-1">
+    <Card className="mb-4 card-product rounded">
       <Card.Img variant="top" src={img} />
-      <Card.Body>
-        <Card.Title style={{ height: "2em" }}>{title}</Card.Title>
-        <Card.Text>Rp. {price}</Card.Text>
+      <Card.Body className="px-0 pb-0">
+        <Card.Title className="font-weight-bold title-card">{title}</Card.Title>
+        <Card.Text className="text-red avenir-font card-price">
+          Rp. {price}
+        </Card.Text>
         <Button
           onClick={() => {
             handleCart(product);
           }}
-          className="btn-yellow text-dark"
+          className="btn-yellow font-weight-bold avenir-font"
           block
         >
           Order

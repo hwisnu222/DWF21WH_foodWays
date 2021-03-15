@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Navbar, Form, NavDropdown } from "react-bootstrap";
+import { RoleContext } from "../../context/roleContext";
 import { UserContext } from "../../context/userContext";
 
 //images
@@ -14,10 +15,12 @@ import AddProduct from "../../assets/icon/addproduct.svg";
 export default function HeaderPartner() {
   const route = useHistory();
   const [state, dispatch] = useContext(UserContext);
+  const [roleUser, dispatchRole] = useContext(RoleContext);
 
   // handle logout
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
+    dispatchRole({ type: "USER_LOGOUT" });
     route.push("/");
   };
 
@@ -28,25 +31,34 @@ export default function HeaderPartner() {
         <img src={Logo} alt="logo" />
       </Navbar.Brand>
       <Form inline>
-        <img src={Avatar} alt="avatar" />
+        <img src={Avatar} alt="avatar" className="avatar" />
         <NavDropdown
           id="collasible-nav-dropdown"
           menuAlign="right"
           id="dropdown-menu-align-right"
         >
           <div className="triangle"></div>
-          <NavDropdown.Item as={Link} to="/partner-profile">
+          <NavDropdown.Item as={Link} to="/partner-profile" className="py-2">
             <img src={User} alt="user" className="icon-menu" /> Profile
           </NavDropdown.Item>
-          <NavDropdown.Item as={Link} to="/add-product">
+          <NavDropdown.Item as={Link} to="/add-product" className="py-2">
             <img src={AddProduct} alt="user" className="icon-menu" /> Add
             Product
           </NavDropdown.Item>
-          <NavDropdown.Item as={Link} to="/transaction" className="item-menu">
-            <img src={AddProduct} alt="user" className="icon-menu" />{" "}
+          <NavDropdown.Item
+            as={Link}
+            to="/transaction"
+            className="item-menu py-2"
+          >
+            <img src={AddProduct} alt="user" className="icon-menu" />
             Transaction
           </NavDropdown.Item>
-          <NavDropdown.Item as={Link} to="/" onClick={handleLogout}>
+          <NavDropdown.Item
+            as={Link}
+            to="/"
+            onClick={handleLogout}
+            classMenu="py-2"
+          >
             <img src={Logout} alt="logout" className="icon-menu" />
             Logout
           </NavDropdown.Item>

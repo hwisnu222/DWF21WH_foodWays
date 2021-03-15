@@ -12,6 +12,8 @@ function reducerFunc(state, action) {
   switch (type) {
     case "ADD_CART":
       return { carts: [...state.carts, payload] };
+    case "REMOVE_ALL_CART":
+      return { carts: [] };
     default:
       throw new Error();
   }
