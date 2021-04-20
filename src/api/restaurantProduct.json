@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Geprek Bensu",
+    "image": "https://raw.githubusercontent.com/hwisnu222/DWF21WH_foodWays/f34a1027cbe638842b5d3a753f3118be3838a0fc/src/assets/images/geprek.svg",
+    "distance": "0.2 KM"
+  },
+  {
+    "id": 2,
+    "title": "Nasi Goreng Mas Rony",
+    "image": "https://raw.githubusercontent.com/hwisnu222/DWF21WH_foodWays/f34a1027cbe638842b5d3a753f3118be3838a0fc/src/assets/images/nasigoreng.svg",
+    "distance": "0.6 KM"
+  },
+  {
+    "id": 3,
+    "title": "Pecel Ayam Prambanan",
+    "image": "https://raw.githubusercontent.com/hwisnu222/DWF21WH_foodWays/f34a1027cbe638842b5d3a753f3118be3838a0fc/src/assets/images/pecel.svg",
+    "distance": "0.6 KM"
+  },
+  {
+    "id": 4,
+    "title": "Kopi Kenangan",
+    "image": "https://raw.githubusercontent.com/hwisnu222/DWF21WH_foodWays/f34a1027cbe638842b5d3a753f3118be3838a0fc/src/assets/images/kopi.svg",
+    "distance": "1.6 KM"
+  }
+]

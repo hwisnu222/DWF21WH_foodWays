@@ -8,7 +8,7 @@ export default function PartProfile() {
       <HeaderPartner />
       <Profile
         title="Profile Partner"
-        history="Order"
+        history="Transaction"
         linkEdit="/edit-partner-profile"
       />
     </div>

@@ -14,6 +14,23 @@
   font-family: "Abhaya Libre", serif;
 }
 
+.card-hover:hover {
+  transform: scale(1.1);
+  box-shadow: 10px 10px 208px -29px rgba(255, 153, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 208px -29px rgba(255, 153, 0, 0.75);
+  -moz-box-shadow: 10px 10px 208px -29px rgba(255, 153, 0, 0.75);
+}
+.card-hover {
+  transition: transform 0.5s ease;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.image-partner {
+  width: 53px;
+}
 /* color */
 .text-red {
   color: #ff0742;
@@ -56,7 +73,7 @@ body {
 }
 
 .btn-yellow {
-  border: none;
+  border: none !important;
   background: #ffc700;
   color: #433434;
 }
@@ -75,20 +92,22 @@ body {
 }
 
 .btn-cancel {
-  padding: 0.3em 2em;
+  padding: 0.2em 1em;
   border-radius: 5px;
   background: #ff0742;
   color: #f2f2f2;
   margin-right: 0.5em;
+  margin-left: 1em;
   cursor: pointer;
 }
 .btn-cancel:hover {
   background: #d80536;
 }
 .btn-approve {
-  padding: 0.3em 2em;
+  padding: 0.2em 1em;
   border-radius: 5px;
   background: #0acf83;
+  margin-right: 1em;
   color: #f2f2f2;
   cursor: pointer;
 }
@@ -96,16 +115,22 @@ body {
   background: #069c63;
 }
 .resolve {
-  padding: 0.1em 0.35em;
-  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
   background: #0acf83;
   cursor: pointer;
 }
 .reject {
-  padding: 0.1em 0.35em;
-  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
   cursor: pointer;
   background: #ff0742;
+}
+
+.fa-clock-o {
+  font-size: 20px;
 }
 .success {
   color: #0acf83;
@@ -149,6 +174,17 @@ html {
   padding: 0.1em 2em;
   color: #00ff47;
 }
+.status-otw {
+  background: #00c3ff1e;
+  padding: 0.1em 2em;
+  color: #00d9ff;
+}
+
+.status-failed {
+  background: #ff00001e;
+  padding: 0.1em 2em;
+  color: #ff0000;
+}
 
 .input-text {
   border: 2px solid #433434;
@@ -170,9 +206,9 @@ html {
   box-shadow: none;
 }
 
-.title-product {
+/* .title-product {
   height: 2em;
-}
+} */
 
 .total-product {
   padding: 0.3em 1em;
@@ -204,11 +240,11 @@ html {
   right: 10px;
   margin: 12px;
   border-radius: 4px;
-  width: 400px;
+  width: 350px;
 }
 
 .address-title {
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .address-user {
@@ -251,7 +287,7 @@ html {
 }
 
 .text-category {
-  font-size: 24px;
+  font-size: 23px;
   text-decoration: none;
 }
 
@@ -281,4 +317,123 @@ html {
 
 .cart-price {
   font-size: 14px;
+}
+
+.popular-text {
+  margin: 59px 0 30px 0;
+}
+
+.restaurant-near-text {
+  margin: 91px 0 30px 0;
+}
+
+.input-upload {
+  padding: 3px 10px;
+  border: 2px solid #433434;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.attach-file {
+  width: 18px;
+}
+.label-upload {
+  padding-bottom: 0 !important;
+}
+
+td,
+th {
+  border: 1px solid #201919;
+  font-family: "Avenir LT Std", sans-serif;
+}
+.table td {
+  padding: 7px;
+  vertical-align: middle;
+}
+.table th {
+  padding: 3px;
+}
+
+thead {
+  background: #e5e5e5;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  color: #f2f2f2;
+  background: #433434;
+}
+
+.link-form:hover {
+  color: #ffc700;
+}
+
+[type="button"] {
+  outline: none !important;
+  border: 1px solid #362b2b;
+}
+[type="button"]:hover {
+  border: 1px solid #362b2b;
+}
+
+[type="button"]:active {
+  background: #362b2b !important;
+  box-shadow: none !important;
+  border-color: #362b2b;
+}
+[type="button"]:focus {
+  background: #362b2b !important;
+  box-shadow: none;
+  outline: none !important;
+  border-color: #362b2b;
+}
+
+[type="submit"] {
+  background: #362b2b !important;
+  border-color: #362b2b;
+}
+
+[type="submit"]:active {
+  border-color: none !important;
+  box-shadow: none !important;
+  border-color: #362b2b;
+}
+
+[type="submit"]:focus {
+  border-color: #362b2b !important;
+  background: #f0efef;
+  box-shadow: none;
+  outline: none !important;
+}
+
+.btn-default {
+  border: 1px solid #362b2b;
+}
+
+.btn-default:hover {
+  border: 1px solid #362b2b;
+}
+
+.btn-default:active {
+  background: #362b2b !important;
+  box-shadow: none !important;
+  border-color: #362b2b;
+}
+.btn-default:focus {
+  background: #362b2b !important;
+  box-shadow: none;
+  outline: none !important;
+  border-color: #362b2b;
+}
+
+.map-container {
+  height: 500px;
+}
+
+.modal-map {
+  top: 0;
 }

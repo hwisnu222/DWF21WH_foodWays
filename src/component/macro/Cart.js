@@ -83,11 +83,11 @@ export default function Cart() {
               <hr />
               <div className="d-flex">
                 <div>
-                  <img src={item.img} alt="chart" className="mr-3" />
+                  <img src={item.image} alt="chart" className="mr-3" />
                 </div>
                 <div className="d-flex justify-content-between w-100">
                   <div>
-                    <p className="font-weight-bold">{item.name}</p>
+                    <p className="font-weight-bold">{item.title}</p>
                     <p>
                       <span className="font-weight-bolder decrement ">-</span>
                       <span className="total-product avenir-font">1</span>
@@ -136,24 +136,22 @@ export default function Cart() {
             </div>
           </div>
           <div className="d-flex justify-contetn-end">
-            <Button
-              className="brown ml-auto mt-5 px-5 avenir-font"
-              onClick={handleSuccess}
-            >
-              Order
-            </Button>
+            {carts.length > 0 ? (
+              <Button
+                className="brown ml-auto mt-5 px-5 avenir-font"
+                onClick={handleSuccess}
+              >
+                Order
+              </Button>
+            ) : (
+              <span></span>
+            )}
           </div>
         </Col>
       </Row>
 
       {/* Modal */}
-      <Modal
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-        show={modalLocation}
-        onHide={handleClose}
-      >
+      <Modal size="lg" show={modalLocation} onHide={handleClose}>
         <div className="d-flex justify-content-end">
           <i
             onClick={handleClose}
@@ -173,6 +171,7 @@ export default function Cart() {
         centered
         show={modalSuccess}
         onHide={handleSuccess}
+        className="modal-map"
       >
         <Modal.Body>
           <p>Makanan berhasil dipesan.</p>

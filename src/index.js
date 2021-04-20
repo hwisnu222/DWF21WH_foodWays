@@ -2,10 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 // import "./index.css";
 import App from "./App";
+import { UserContextProvider } from "./context/userContext";
+import { RoleContextProvider } from "./context/roleContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <RoleContextProvider>
+      <UserContextProvider>
+        <App />
+      </UserContextProvider>
+    </RoleContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

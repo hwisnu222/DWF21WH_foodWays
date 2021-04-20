@@ -8,7 +8,7 @@ export default function UserProfile() {
       <HeaderAdmin />
       <Profile
         title="My Profile"
-        history="Transaction"
+        history="Order"
         linkEdit="/edit-user-profile"
       />
     </div>

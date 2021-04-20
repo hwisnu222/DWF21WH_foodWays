@@ -11,7 +11,6 @@ import Home from "../component/macro/Home";
 export default function Index() {
   const [roleUser, dispatchRole] = useContext(RoleContext);
   const { role } = roleUser;
-  console.log(role);
 
   return (
     <div>

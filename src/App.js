@@ -1,4 +1,11 @@
+import { useEffect, useContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { setAuthToken, API_BASE } from "./config/api";
+
+import { UserContext } from "./context/userContext";
+import { RoleContext } from "./context/roleContext";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -23,16 +30,56 @@ import EditPartnerProfile from "./pages/EditPartnerProfile";
 import User from "./pages/User";
 
 //Context
-import { UserContextProvider } from "./context/userContext";
-import { CartContextProvider } from "./context/cartContext";
-import { RoleContextProvider } from "./context/roleContext";
 
+import { CartContextProvider } from "./context/cartContext";
+import { LocationContextProvider } from "./context/locationContext";
+
+const client = new QueryClient();
+
+//inisialisasi axios setiap kali direfresh
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+  console.log("auth");
+  console.log(localStorage.token);
+}
 function App() {
+  const [state, dispatch] = useContext(UserContext);
+  const [role, dispatchRole] = useContext(RoleContext);
+
+  const checkToken = async () => {
+    try {
+      const response = await API_BASE.get("/auth");
+
+      if (response.status !== 200) {
+        return console.log("tidak bisa mengidentifikasi");
+      }
+
+      dispatch({ type: "LOGIN" });
+
+      const { role } = response.data.data.user;
+
+      if (role == "user") {
+        return dispatchRole({ type: "USER" });
+      } else if (role == "partner") {
+        return dispatchRole({ type: "PARTNER" });
+      }
+    } catch (error) {
+      console.log(error);
+      dispatch({ type: "LOGOUT" });
+      console.log("user logout");
+    }
+    console.log("User is login?", state.isLogin);
+  };
+
+  useEffect(() => {
+    checkToken();
+  }, []);
+
   return (
     // context
-    <RoleContextProvider>
+    <QueryClientProvider client={client}>
       <CartContextProvider>
-        <UserContextProvider>
+        <LocationContextProvider>
           <Router>
             <Switch>
               <Route exact path="/" component={Index} />
@@ -47,7 +94,11 @@ function App() {
                 path="/edit-user-profile"
                 component={EditUserProfile}
               />
-              <Route exact path="/products" component={Detail} />
+              <Route
+                exact
+                path="/products/:idPartner/:partner"
+                component={Detail}
+              />
 
               {/* partner */}
               <PrivateRoute exact path="/add-product" component={AddProduct} />
@@ -71,9 +122,9 @@ function App() {
               <Route component={NotFound} />
             </Switch>
           </Router>
-        </UserContextProvider>
+        </LocationContextProvider>
       </CartContextProvider>
-    </RoleContextProvider>
+    </QueryClientProvider>
   );
 }
 
